@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_dark"
+    tools:context="com.kevin.piazzoli.iptvandroid.MainActivity">
+
+    <ImageView
+        android:id="@+id/img_fondo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/fondo" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ListView
+            android:id="@+id/Principales"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dividerHeight="10dp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btn_peliculas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/background_light"
+            android:text="Peliculas"
+            android:textColor="@android:color/black"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_infantiles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/background_light"
+            android:text="Infantiles"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_live_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/background_light"
+            android:text="Live TV"
+            android:textColor="@android:color/black"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_series"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/background_light"
+            android:text="Series"
+            android:textColor="@android:color/black"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_adultos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/background_light"
+            android:text="Adulto"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layaut_peliculas"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/layaut_categorias"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginLeft="20dp"
+        >
+
+        <TextView
+            android:id="@+id/txt_categoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Categoria"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/post_border_style"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <EditText
+                android:id="@+id/txt_search"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Buscar"
+                android:inputType="textPersonName"
+                android:textColorLink="@android:color/background_dark" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                app:backgroundTint="@android:color/background_dark"
+                app:fabSize="mini"
+                app:srcCompat="@android:drawable/ic_search_category_default" />
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/Peliculas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="20dp"
+            android:paddingTop="8dp"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layaut_categorias"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginLeft="20dp"
+        >
+
+        <ListView
+            android:id="@+id/categorias"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="10dp"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layaut_temporadas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/post_border_style"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/layaut_peliculas"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="20dp"
+        >
+
+        <ImageView
+            android:id="@+id/img_serie"
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:layout_marginBottom="4dp"
+            android:background="@android:color/background_dark"
+            app:srcCompat="@android:color/background_dark"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <ListView
+            android:id="@+id/temporadas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="10dp" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
